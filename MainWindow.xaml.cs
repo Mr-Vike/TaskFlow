@@ -18,7 +18,16 @@ namespace TaskFlow
     {
         public MainWindow()
         {
-            InitializeComponent();
+            //InitializeComponent();
+            var transfer = new UserTransfer();
+            transfer.TransferComplete += transferCompleted;
+ 
+
+        }
+
+        public static void transferCompleted(object sender, EventArgs e)
+        {
+            Console.Write("Completed");
         }
     }
 }
