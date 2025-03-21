@@ -7,7 +7,16 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Resources\Styles.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\Dashboard.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Pages\PlaceHolder1.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Pages\PlaceHolder2.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -15,7 +24,16 @@
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Resources\Styles.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\Dashboard.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Pages\PlaceHolder1.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Pages\PlaceHolder2.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

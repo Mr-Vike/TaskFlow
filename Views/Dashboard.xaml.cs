@@ -1,42 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+﻿using Wpf.Ui.Controls;
 
 namespace TaskFlow.Views
 {
-    /// <summary>
-    /// Interaction logic for Dashboard.xaml
-    /// </summary>
-    public partial class Dashboard : Page
+    public partial class Dashboard : FluentWindow
     {
-        ProgressBar bar = new ProgressBar(100);
-
-        public string Value { get; set; }
         public Dashboard()
         {
             InitializeComponent();
-            bar.ProgressComplete += OnProgressComplete;
+            ApplyBackdrop();
         }
 
-        static void OnProgressComplete(object sender, EventArgs e)
+        private void ApplyBackdrop()
         {
-           
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            bar.Load(10);
+            if (WindowBackdrop.IsSupported(WindowBackdropType.Mica))
+            {
+                WindowBackdrop.ApplyBackdrop(this, WindowBackdropType.Mica);
+            }
         }
     }
 }
