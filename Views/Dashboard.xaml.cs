@@ -1,4 +1,5 @@
-﻿using Wpf.Ui.Controls;
+﻿using TaskFlow.ViewModels;
+using Wpf.Ui.Controls;
 
 namespace TaskFlow.Views
 {
@@ -8,6 +9,7 @@ namespace TaskFlow.Views
         {
             InitializeComponent();
             ApplyBackdrop();
+
         }
 
         private void ApplyBackdrop()

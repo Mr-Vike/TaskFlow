@@ -4,7 +4,7 @@ using TaskFlow.Views.Pages;
 
 namespace TaskFlow.Services
 {
-    public class NavigationService
+    public class NavigationService: INavigationService // Page,  <- viewmodel
     {
         private readonly DashboardViewModel _viewModel;
 
@@ -12,8 +12,8 @@ namespace TaskFlow.Services
         {
             _viewModel = viewModel;
         }
-        
-        public void NavigateTo(string pageKey)
+
+        public void Navigate(string pageKey)
         {
             _viewModel.CurrentPage = pageKey switch
             {

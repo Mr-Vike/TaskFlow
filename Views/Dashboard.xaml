@@ -8,11 +8,10 @@
         Width="1280"
         Height="720"
         WindowBackdropType="Mica"
+        DataContext="ViewModels/DashboardViewModel"
         ExtendsContentIntoTitleBar="True">
 
-    <Window.DataContext>
-        <vm:DashboardViewModel />
-    </Window.DataContext>
+
 
     <Grid>
         <ui:NavigationView PaneDisplayMode="Left"

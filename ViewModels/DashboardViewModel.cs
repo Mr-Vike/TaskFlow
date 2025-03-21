@@ -3,19 +3,23 @@ using CommunityToolkit.Mvvm.Input;
 using System.Collections.ObjectModel;
 using System.Windows.Navigation;
 using TaskFlow.Models;
+using TaskFlow.Services;
+using Unity;
 
 namespace TaskFlow.ViewModels
 {
-    public partial class DashboardViewModel : ObservableObject
+    public partial class DashboardViewModel : ObservableObject, IDashboardViewModel
     {
-        private readonly NavigationService ? _navigationService;
+        private readonly INavigationService _navigationService;
 
         [ObservableProperty]
         private object ? _currentPage;
         
-        public DashboardViewModel (NavigationService navigationService)
+        public DashboardViewModel()
         {
-            _navigationService = navigationService;
+            var container = new UnityContainer();
+
+            _navigationService = container.Resolve<INavigationService>();
             _navigationService.Navigate("Placeholder1");
         }
 
@@ -37,7 +41,7 @@ namespace TaskFlow.ViewModels
             new Reward { Name = "Random2", Cost = 500 }
         };
 
-        public DashboardViewModel() => LoadSampleTasks();
+        // public DashboardViewModel() => LoadSampleTasks();
 
         private void LoadSampleTasks()
         {
