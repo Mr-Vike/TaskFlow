@@ -1,6 +1,8 @@
-﻿using System.Configuration;
-using System.Data;
+﻿
 using System.Windows;
+using TaskFlow.ViewModels;
+using TaskFlow.Services;
+using Unity;
 
 namespace TaskFlow
 {
@@ -9,6 +11,16 @@ namespace TaskFlow
     /// </summary>
     public partial class App : Application
     {
+        public App()
+        {
+            var container = new UnityContainer();
+
+            container.RegisterType<INavigationService, NavigationService>();
+            container.RegisterType<IDashboardViewModel, DashboardViewModel>();
+
+            
+
+        }
     }
 
 }
